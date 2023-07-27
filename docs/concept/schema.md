@@ -117,6 +117,15 @@ Using [reference models](/patterns/reference-models), you can named your model a
 // auth.model.ts
 import { Elysia } from 'elysia'
 
+export const authModel = (app: Elysia) => 
+    app
+        .model({
+            sign: t.Object({
+                username: t.String(),
+                password: t.String()
+            })
+        })
+
 // index.ts
 import { Elysia } from 'elysia'
 import { authModel } from './auth.model.ts'
